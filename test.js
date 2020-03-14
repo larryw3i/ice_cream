@@ -1,5 +1,4 @@
 
-(function(){
     exam_text_0 = 
 `= xxxxx学校
 == 期末测试卷
@@ -20,18 +19,18 @@
 # 选择题
 
 ## 选( )还是AAAAAA
-A KKKKKKKKKKKKK
-B LLLLLLLLLLLLLLL
-C MMMMMMMMMMMMMMMM
-D NNNNNNNNNNNNNNNNNNNNNN
+A. KKKKKKKKKKKKK
+B. LLLLLLLLLLLLLLL
+C. MMMMMMMMMMMMMMMM
+D. NNNNNNNNNNNNNNNNNNNNNN
 > A
 
 ## 这一题不选A的话选什么( )
-#audio  './audio_0.avi' '80%' 'audio_0'
-A PPPPPPP
-B QQQQQQQQQQQQQQQQQQ
-C RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-D SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+#audio  './audio_0.mp3' '80%' 'audio_0'
+A. PPPPPPP
+B. QQQQQQQQQQQQQQQQQQ
+C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 > B
 
 # 填空题
@@ -54,16 +53,18 @@ D SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 ### KLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKL ?
 ?
 
-> HSDKJF HAFKh akf fha lfhadsfkj abva mnf lf alk
+< 
+HSDKJF HAFKh akf fha lfhadsfkj abva mnf lf alk
 a fhjaksfha skgg das
 as jakfsad gg asldfag sbaf fasd
 a fadhfa sgf adsjk asdkfk basjvba
+>
 
 ### BVBVBBVBVBVBVBV    BBVBVBVBVBVBVBVBVBVBVBV ?
 ?
 #video     './video_0.mp4' '80%' 'video_0'
 
-> 
+< 
 dhg skdghs kghsdg hslgahga g
 ahag bxvbfhag 
 a jalhf ag
@@ -71,20 +72,23 @@ a jalhf ag
 
 ## ZZZZZZZZZZZZZZZZZZZZ    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ ?
 ?
-> 
+< 
 hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha 
  gahlghakghagbcx,vaa
  ah algha ga
->
-`;
-    var exam_text = '';
+>`;
+
+(function(){
+    var exam_text = exam_text_0;
+    
+    exam_text = exam_text.replace('\\\n', '');
 
     var subheading_reg = /^=\s+/;
     var headline_reg = /^==\s+/;
     var exam_tip_reg = /^#\s+/;
     var exam_q_reg = /^##\s+/;
     var exam_q_a_reg = /^###\s+/
-    var exam_selector_reg = /^([A|B|C|D]\s+\w+)/
+    var exam_selector_reg = /^([A-Z].\s+\w+)/
     var exam_t_f_reg = />\s+[T|t|F|f]\s*/
 
 
@@ -93,122 +97,152 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
     var exam_tip_index = 1;
     var exam_q_index = 1;
     var exam_q_a_index = 1 ;
-    document.querySelector('#exam_text_teatarea').addEventListener(
-        'keyup',
-        ()=>{ 
-            exam_text = document.querySelector('#exam_text_teatarea').value;
-            exam_text.split('\n').forEach( ( value , index, array ) => {
 
-                if(subheading_reg.test( value )){
-                    preview_html += 
-                        `<div style='text-align:center'><h3>`+
-                        value.split(subheading_reg)[1]+
-                        '</h3></div>';
-                }
-                else if(headline_reg.test( value ))
-                {
-                    preview_html += 
-                        `<div style='text-align:center'><h3>`+
-                        value.split(headline_reg)[1]+
-                        '</h3></div>';
+        exam_text.split('\n').forEach( ( value , index, array ) => {
+
+        if(subheading_reg.test( value )){
+            preview_html += 
+                `<div style='text-align:center'><h3>`+
+                value.split(subheading_reg)[1]+
+                '</h3></div>';
+        }
+        else if(headline_reg.test( value ))
+        {
+            preview_html += 
+                `<div style='text-align:center'><h3>`+
+                value.split(headline_reg)[1]+
+                '</h3></div>';
+
+        }
+        else if(exam_tip_reg.test( value ))
+        {
+            preview_html +=
+                `<h4>`+ exam_tip_index+ '. '+
+                value.split(exam_tip_reg)[1]+'</h4>';
+            exam_tip_index++;    
+        }
+        else if( exam_q_reg.test(value) )
+        {
+            preview_html+= 
+                `<h5 style='margin-left:15px'>`+exam_q_index+'. '
+                + value.split( exam_q_reg )[1]+`</h5>` +
+                (value.indexOf('__') > -1?
+                `<input type='text' style='margin-left:20px'/>`:'');
+            exam_q_index++;
+        }
+        else if( exam_selector_reg.test(value) )
+        {
+            preview_html +=
+            `
+            <label style='margin-left:20px'>
+                <input type='checkbox'/>
+                ${value}
+            </label><br/>
+            `;
+        }
+        else if( exam_q_a_reg.test( value ) )
+        {
+            preview_html+=
+            `<h5 style='margin-left:20px'>
+            (${exam_q_a_index}). ${value.split( exam_q_a_reg )[1]}</h5>`;
+            exam_q_a_index++;
+        }
+        else if ( value =='?' )
+        {
+            preview_html +=
+            `
+                <textarea style='width:80%; margin-left:20px'
+                rows='10'></textarea>
+            `;
+        }
+        else if( exam_t_f_reg.test( value )  )
+        {
+            preview_html+=
+            `
+            <label style='margin-left:20px;font-size:150%;'>
+                <input type='checkbox' /> ✔
+            </label>
+            `;
+        }
+        else if( /^#audio\s+/.test(value) )
+        {
+            var value_splits = value.split("'");
+            preview_html+=
+            `
+            <div style='margin-left:20px; width:100%'>
+                <audio src="${value_splits[1]}" controls="controls"
+                    style='width:${value_splits[3]?'50%':value_splits[3]}'
+                    alt='${value_splits[5] ? value_splits[5]:"audio" }'>
+                </audio>
+            </div>
+            `;
+        }
+        else if( /^#video\s+/.test(value) )
+        {
+            var value_splits = value.split("'");
+            preview_html+=
+            `
+            <div style='margin-left:20px; width:100%'>
+                <video src="${value_splits[1]}" controls="controls"
+                    style='width:${value_splits[3]?'50%':value_splits[3]}'
+                    alt='${value_splits[5] ? value_splits[5]:"video" }'>
+                </video>
+            </div>
+            `;
+        }
+        else if( /^#image\s+/.test(value) )
+        {
+            var value_splits = value.split("'");
+            preview_html+=
+            `
+            <div style='margin-left:20px; width:100%'>
+                <img src="${value_splits[1]}"
+                    style='width:${value_splits[3]?'50%':value_splits[3]}'
+                    alt='${value_splits[5] ? value_splits[5]:'image'}'/>
+            </div>
+            `;
+        }
         
-                }
-                else if(exam_tip_reg.test( value ))
-                {
-                    preview_html +=
-                        `<h4>`+ exam_tip_index+ '. '+
-                        value.split(exam_tip_reg)[1]+'</h4>';
-                    exam_tip_index++;    
-                }
-                else if( exam_q_reg.test(value) )
-                {
-                    preview_html+= 
-                        `<h5 style='margin-left:15px'>`+exam_q_index+'. '
-                        + value.split( exam_q_reg )[1]+`</h5>` +
-                        (value.indexOf('__') > -1?
-                        `<input type='text' style='margin-left:20px'/>`:'');
-                    exam_q_index++;
-                }
-                else if( exam_selector_reg.test(value) )
-                {
-                    preview_html +=
-                    `
-                    <label style='margin-left:20px'>
-                        <input type='checkbox'/>
-                        ${value}
-                    </label><br/>
-                    `;
-                }
-                else if( exam_q_a_reg.test( value ) )
-                {
-                    preview_html+=
-                    `<h5 style='margin-left:20px'>
-                    (${exam_q_a_index}). ${value.split( exam_q_a_reg )[1]}</h5>`;
-                    exam_q_a_index++;
-                }
-                else if ( value =='?' )
-                {
-                    preview_html +=
-                    `
-                        <textarea style='width:80%; margin-left:20px'
-                        rows='10'></textarea>
-                    `;
-                }
-                else if( exam_t_f_reg.test( value )  )
-                {
-                    preview_html+=
-                    `
-                    <label style='margin-left:20px;'>
-                        <input type='checkbox'/>✅
-                    </label>
-                    `;
-                }
-                else if( /^#audio\s+/.test(value) )
-                {
-                    var value_splits = value.split("'");
-                    preview_html+=
-                    `
-                    <div style='margin-left:20px; width:100%'>
-                        <audio src="${value_splits[1]}" controls="controls"
-                            style='width:${value_splits[3]?'50%':value_splits[3]}'
-                            alt='${value_splits[5] ? value_splits[5]:"audio" }'>
-                        </audio>
-                    </div>
-                    `;
-                }
-                else if( /^#video\s+/.test(value) )
-                {
-                    var value_splits = value.split("'");
-                    preview_html+=
-                    `
-                    <div style='margin-left:20px; width:100%'>
-                        <video src="${value_splits[1]}" controls="controls"
-                            style='width:${value_splits[3]?'50%':value_splits[3]}'
-                            alt='${value_splits[5] ? value_splits[5]:"video" }'>
-                        </video>
-                    </div>
-                    `;
-                }
-                else if( /^#image\s+/.test(value) )
-                {
-                    var value_splits = value.split("'");
-                    preview_html+=
-                    `
-                    <div style='margin-left:20px; width:100%'>
-                        <img src="${value_splits[1]}"
-                            style='width:${value_splits[3]?'50%':value_splits[3]}'
-                            alt='${value_splits[5] ? value_splits[5]:'image'}'/>
-                    </div>
-                    `;
-                }
-                
-            });
-            
-            document.querySelector('#exam_preview').insertAdjacentHTML( 
-                'beforeend', preview_html
-            );
-     }, false);
+    });
     
+    document.querySelector('#exam_preview').insertAdjacentHTML( 
+        'beforeend', preview_html
+    );
 
 
 }());
+
+// get answers from respondence
+function test_0()
+{
+    var labels = document.querySelectorAll('label');
+    labels.forEach( ( l_value, l_key, l_parent )=>{
+        if( l_value.querySelector('input').checked )
+        {
+            console.log(l_key );
+        }
+    } );
+    var input_texts = document.querySelectorAll(`input[type='text'],textarea`);
+    input_texts.forEach( (l_value, l_key, l_parent)=>{
+        console.log( l_value.value );
+    } );
+}
+
+// get answers from origin
+function text_1()
+{
+    String(exam_text_0).split('\n').forEach( 
+        (a_value , a_index, a_array )=>{
+            if( />\s+\S+/.test( a_value) )
+            {
+                console.log( a_value.split(/>\s+/)[1] );
+            }
+    });
+
+    String( exam_text_0 ).match(/<\s+(^>+)\s+>/g).forEach(
+        ( a_value, a_index, a_array )=>{
+            console.log( a_value );
+        }
+    );
+
+}

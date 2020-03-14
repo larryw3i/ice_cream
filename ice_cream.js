@@ -1,14 +1,17 @@
 
-function ice_cream( exam_text , preview_target )
+
+
+
+function preview( exam_text , preview_target )
 {
-    exam_text = String( exam_text );
+    exam_text = String( exam_text ).replace('\\\n', '');
     
     var subheading_reg = /^=\s+(\w+)/;
     var headline_reg = /^==\s+(\w+)/;
     var exam_tip_reg = /^#\s+/;
     var exam_q_reg = /^##\s+/;
     var exam_q_a_reg = /^###\s+/
-    var exam_selector_reg = /^([A|B|C|D]\s+\w+)/
+    var exam_selector_reg = /^(\S.\s+\w+)/
     var exam_t_f_reg = />\s+[T|t|F|f]\s*/
 
     var preview_html = '';
@@ -78,8 +81,8 @@ function ice_cream( exam_text , preview_target )
         {
             preview_html+=
             `
-            <label style='margin-left:20px;'>
-                <input type='checkbox'/>✅
+            <label style='margin-left:20px;font-size:150%;'>
+                <input type='checkbox' /> ✔
             </label>
             `;
         }
