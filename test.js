@@ -19,19 +19,19 @@
 # 选择题
 
 ## 选( )还是AAAAAA
-A. KKKKKKKKKKKKK
+>A. KKKKKKKKKKKKK
 B. LLLLLLLLLLLLLLL
 C. MMMMMMMMMMMMMMMM
 D. NNNNNNNNNNNNNNNNNNNNNN
-> A
+
 
 ## 这一题不选A的话选什么( )
 #audio  './audio_0.mp3' '80%' 'audio_0'
 A. PPPPPPP
-B. QQQQQQQQQQQQQQQQQQ
+>B. QQQQQQQQQQQQQQQQQQ
 C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-> B
+
 
 # 填空题
 
@@ -88,7 +88,7 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
     var exam_tip_reg = /^#\s+/;
     var exam_q_reg = /^##\s+/;
     var exam_q_a_reg = /^###\s+/
-    var exam_selector_reg = /^([A-Z].\s+\w+)/
+    var exam_selector_reg = /^(>*[A-Z].\s+\w+)/
     var exam_t_f_reg = />\s+[T|t|F|f]\s*/
 
 
@@ -109,25 +109,33 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
         else if(headline_reg.test( value ))
         {
             preview_html += 
-                `<div style='text-align:center'><h3>`+
-                value.split(headline_reg)[1]+
-                '</h3></div>';
+                `<div style='text-align:center'>
+                    <h3>`+
+                        value.split(headline_reg)[1]+
+                    `</h3>
+                </div>`;
 
         }
         else if(exam_tip_reg.test( value ))
         {
             preview_html +=
-                `<h4>`+ exam_tip_index+ '. '+
-                value.split(exam_tip_reg)[1]+'</h4>';
+                `<h4>`+ 
+                    exam_tip_index+ '. '+
+                    value.split(exam_tip_reg)[1] +
+                `</h4>`;
             exam_tip_index++;    
         }
         else if( exam_q_reg.test(value) )
         {
             preview_html+= 
-                `<h5 style='margin-left:15px'>`+exam_q_index+'. '
-                + value.split( exam_q_reg )[1]+`</h5>` +
+                `<h5 style='margin-left:15px'>`+
+                    exam_q_index+'. '+
+                    value.split( exam_q_reg )[1]+
+                `</h5>` +
                 (value.indexOf('__') > -1?
-                `<input type='text' style='margin-left:20px'/>`:'');
+                    `<input type='text' style='margin-left:20px'/>`:
+                    '');
+
             exam_q_index++;
         }
         else if( exam_selector_reg.test(value) )
@@ -136,7 +144,7 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
             `
             <label style='margin-left:20px'>
                 <input type='checkbox'/>
-                ${value}
+                ${ /^>/.test( value ) ? String( value ).substring(1): value  }
             </label><br/>
             `;
         }
@@ -144,7 +152,9 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
         {
             preview_html+=
             `<h5 style='margin-left:20px'>
-            (${exam_q_a_index}). ${value.split( exam_q_a_reg )[1]}</h5>`;
+                (${exam_q_a_index}). ${value.split( exam_q_a_reg )[1]}
+            </h5>`;
+
             exam_q_a_index++;
         }
         else if ( value =='?' )
@@ -229,20 +239,22 @@ function test_0()
 }
 
 // get answers from origin
-function text_1()
+function test_1()
 {
-    String(exam_text_0).split('\n').forEach( 
+    String(exam_text_0).split('>').slice(1).forEach( 
         (a_value , a_index, a_array )=>{
-            if( />\s+\S+/.test( a_value) )
-            {
-                console.log( a_value.split(/>\s+/)[1] );
-            }
+            var first_line = a_value.split('\n')[0];
+            first_line = /\s*[A-Z]./.test( first_line )? 
+                first_line.split('.')[0]: first_line;
+            first_line = first_line.trim();
+            
+            if( /\S+/.test( first_line ) )
+                console.log( first_line );
     });
 
-    String( exam_text_0 ).match(/<\s+(^>+)\s+>/g).forEach(
-        ( a_value, a_index, a_array )=>{
-            console.log( a_value );
-        }
-    );
+    String(exam_text_0).split('<').slice(1).forEach( 
+        (a_value , a_index, a_array )=>{
+            console.log( a_value.split('>')[0] );
+    });
 
 }
