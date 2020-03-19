@@ -32,6 +32,13 @@ A. PPPPPPP
 C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 
+## 这一题不选A的话选什么( )
+#audio  './audio_0.mp3' '80%' 'audio_0'
+A. PPPPPPP
+B. QQQQQQQQQQQQQQQQQQ
+C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+>D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
 
 # 填空题
 
@@ -77,6 +84,47 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
  gahlghakghagbcx,vaa
  ah algha ga
 >`;
+
+// get answers from origin
+function test_2()
+{
+    var answer_index = 0;
+    String(exam_text_0).split(/>/).slice(1).forEach( 
+        (a_value , a_index, a_array )=>{
+
+            var first_line = a_value.split('\n')[0].trim();
+            first_line = /^[A-Z]./.test( first_line )? 
+                first_line.split('.')[0]: first_line;
+
+            if( /\S+/.test( first_line ) )
+            {
+                
+
+                console.log('>>>>' + answer_index );
+
+                var answer = first_line.trim();
+
+                console.log( answer );
+
+                console.log(  a_value.match(/\n+[A-Z].\s*\S+/g) || []  );
+
+                answer_index += ( a_value.match(/\n+[A-Z].\s*\S+/g) || [] )
+                    .length + 1;
+
+
+            }
+    });
+
+    String(exam_text_0).split('<').slice(1).forEach( 
+        (a_value , a_index, a_array )=>{
+            var answer = a_value.split('>')[0].trim();
+            
+            answer_index++;
+            console.log( answer_index );
+            console.log( answer );
+    });
+
+}
 
 (function(){
     var exam_text = exam_text_0;
@@ -237,24 +285,24 @@ function test_0()
         console.log( l_value.value );
     } );
 }
-
 // get answers from origin
 function test_1()
 {
-    String(exam_text_0).split('>').slice(1).forEach( 
+    String(exam_text_0).split('>|(?:[A-Z].)').slice(1).forEach( 
         (a_value , a_index, a_array )=>{
-            var first_line = a_value.split('\n')[0];
-            first_line = /\s*[A-Z]./.test( first_line )? 
-                first_line.split('.')[0]: first_line;
-            first_line = first_line.trim();
-            
             if( /\S+/.test( first_line ) )
-                console.log( first_line );
+                var first_line = a_value.split('\n')[0];
+                first_line = /\s*[A-Z]./.test( first_line )? 
+                    first_line.split('.')[0]: first_line;
+                var answer = first_line.trim();
+                
+                console.log( answer );
     });
 
     String(exam_text_0).split('<').slice(1).forEach( 
         (a_value , a_index, a_array )=>{
-            console.log( a_value.split('>')[0] );
+            var answer = a_value.split('>')[0];
+            console.log( answer );
     });
 
 }
