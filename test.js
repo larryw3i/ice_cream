@@ -5,6 +5,7 @@
 = 计算机
 
 # 判断题 
+5
 ## xxxxxxxxx是对的
 > T
 
@@ -17,6 +18,7 @@
 > F
 
 # 选择题
+5
 
 ## 选( )还是AAAAAA
 >A. KKKKKKKKKKKKK
@@ -32,6 +34,7 @@ A. PPPPPPP
 C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 
+6
 ## 这一题不选A的话选什么( )
 #audio  './audio_0.mp3' '80%' 'audio_0'
 A. PPPPPPP
@@ -41,6 +44,7 @@ C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
 
 # 填空题
+8
 
 ## UUUUUUUUUUUUUUUUUUU____UUUUUUUUUUUUUUUUUUUu___UUU 
 > _VBC _NBV
@@ -59,7 +63,7 @@ C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
 ### KLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKL ?
 ?
-
+10
 < 
 HSDKJF HAFKh akf fha lfhadsfkj abva mnf lf alk
 a fhjaksfha skgg das
@@ -71,6 +75,7 @@ a fadhfa sgf adsjk asdkfk basjvba
 ?
 #video     './video_0.mp4' '80%' 'video_0'
 
+30
 < 
 dhg skdghs kghsdg hslgahga g
 ahag bxvbfhag 
@@ -90,43 +95,43 @@ function test_2()
 {
     var answer_index = 0;
     var selector_reg = /\n+[A-Z]{1}\./g
-    String(exam_text_0).split(/>/).slice(1).forEach( 
-        (a_value , a_index, a_array )=>{
-
-            var first_line = a_value.split('\n')[0].trim();
-            first_line = /^[A-Z]\./.test( first_line )? 
-                first_line.split('.')[0]: first_line;
-
-            if( /\S+/.test( first_line ) )
-            {
-                
-
-                console.log('>>>>' + answer_index );
-
-                var answer = first_line.trim();
-
-                console.log( answer );
-
-                answer_index += ( a_value.match( selector_reg  ) || [] )
-                    .length +  1;
-                
-                console.log( '===>' );
-                console.log(( a_value.match( selector_reg ) || [] ) );
-
-
-            }
-    });
-
-    String(exam_text_0).split('<').slice(1).forEach( 
-        (a_value , a_index, a_array )=>{
-            var answer = a_value.split('>')[0].trim();
-            
-            console.log('>>>>' + answer_index );
-            console.log( answer );
-            answer_index++;
-            
-
-    });
+    String( exam_text_0 ).split(/\n+\d+\n+/).slice(1).forEach( 
+        (g_value, g_index, g_array)=>{
+            g_value.split(/>/).slice(1).forEach( 
+                (a_value , a_index, a_array )=>{
+        
+                    var first_line = a_value.split('\n')[0].trim();
+                    first_line = /^[A-Z]\./.test( first_line )? 
+                        first_line.split('.')[0]: first_line;
+        
+                    if( /\S+/.test( first_line ) )
+                    {
+                        
+        
+                        console.log('>>>>' + answer_index );
+        
+                        var answer = first_line.trim();
+        
+                        console.log( answer );
+        
+                        answer_index += ( a_value.match( selector_reg  ) || [] )
+                            .length +  1;
+                        
+                    }
+            });
+        
+            g_value.split('<').slice(1).forEach( 
+                (a_value , a_index, a_array )=>{
+                    var answer = a_value.split('>')[0].trim();
+                    
+                    console.log('>>>>' + answer_index );
+                    console.log( answer );
+                    answer_index++;
+                    
+        
+            });
+        }
+    )
 
 }
 
