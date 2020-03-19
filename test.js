@@ -89,11 +89,12 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
 function test_2()
 {
     var answer_index = 0;
+    var selector_reg = /\n+[A-Z]{1}\./g
     String(exam_text_0).split(/>/).slice(1).forEach( 
         (a_value , a_index, a_array )=>{
 
             var first_line = a_value.split('\n')[0].trim();
-            first_line = /^[A-Z]./.test( first_line )? 
+            first_line = /^[A-Z]\./.test( first_line )? 
                 first_line.split('.')[0]: first_line;
 
             if( /\S+/.test( first_line ) )
@@ -106,10 +107,11 @@ function test_2()
 
                 console.log( answer );
 
-                console.log(  a_value.match(/\n+[A-Z].\s*\S+/g) || []  );
-
-                answer_index += ( a_value.match(/\n+[A-Z].\s*\S+/g) || [] )
-                    .length + 1;
+                answer_index += ( a_value.match( selector_reg  ) || [] )
+                    .length +  1;
+                
+                console.log( '===>' );
+                console.log(( a_value.match( selector_reg ) || [] ) );
 
 
             }
@@ -119,9 +121,11 @@ function test_2()
         (a_value , a_index, a_array )=>{
             var answer = a_value.split('>')[0].trim();
             
-            answer_index++;
-            console.log( answer_index );
+            console.log('>>>>' + answer_index );
             console.log( answer );
+            answer_index++;
+            
+
     });
 
 }
