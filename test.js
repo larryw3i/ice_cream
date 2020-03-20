@@ -100,51 +100,47 @@ function test_2()
 {
     var answer_index = 0;
     var selector_reg = /\n+[A-E]\./g
-    // String( exam_text_0 ).split(/\n+\d+\n+/).slice(1).forEach( 
-    //     (g_value, g_index, g_array)=>{
-            String( exam_text_0 ).split(/>/).slice(1).forEach( 
-                (a_value , a_index, a_array )=>{
-        
-                    var first_line = a_value.split('\n')[0].trim();
-                    first_line = /^[A-Z]\./.test( first_line )? 
-                        first_line.split('.')[0]: first_line;
-        
-                    if( /\S+/.test( first_line ) )
-                    {
-                        var answer = first_line.trim();
 
-                        if( /[A-E]/.test( answer ) || /[T|t]/.test( answer ) )
-                        {
-                            console.log('>>>>' + answer_index );
-                        } 
-                        
-                        if( /^_/.test( answer ) )
-                        {
+    String( exam_text_0 ).split(/>/).slice(1).forEach( 
+        (a_value , a_index, a_array )=>{
 
-                            console.log('>>>>' + answer_index );
-                            console.log(  answer );
-                        }
+            var first_line = a_value.split('\n')[0].trim();
+            first_line = /^[A-Z]\./.test( first_line )? 
+                first_line.split('.')[0]: first_line;
 
-                        answer_index += ( a_value.match( selector_reg ) || [] )
-                            .length +  1;
-                        
-                        
-                    }
-            });
-        
-            String( exam_text_0 ).split('<').slice(1).forEach( 
-                (a_value , a_index, a_array )=>{
-                    var answer = a_value.split('>')[0].trim();
-                    
+            if( /\S+/.test( first_line ) )
+            {
+                var answer = first_line.trim();
+
+                if( /[A-E]/.test( answer ) || /[T|t]/.test( answer ) )
+                {
                     console.log('>>>>' + answer_index );
+                } 
+                
+                if( /^_/.test( answer ) )
+                {
 
+                    console.log('>>>>' + answer_index );
                     console.log(  answer );
+                }
 
-                    answer_index++;
-        
-            });
-        // }
-    // )
+                answer_index += ( a_value.match( selector_reg ) || [] )
+                    .length +  1;
+                
+            }
+    });
+
+    String( exam_text_0 ).split('<').slice(1).forEach( 
+        (a_value , a_index, a_array )=>{
+            var answer = a_value.split('>')[0].trim();
+            
+            console.log('>>>>' + answer_index );
+
+            console.log(  answer );
+
+            answer_index++;
+
+    });
 
 }
 
