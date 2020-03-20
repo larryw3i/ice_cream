@@ -94,10 +94,10 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
 function test_2()
 {
     var answer_index = 0;
-    var selector_reg = /\n+[A-Z]{1}\./g
-    String( exam_text_0 ).split(/\n+\d+\n+/).slice(1).forEach( 
-        (g_value, g_index, g_array)=>{
-            g_value.split(/>/).slice(1).forEach( 
+    var selector_reg = /\n+[A-Z]\./g
+    // String( exam_text_0 ).split(/\n+\d+\n+/).slice(1).forEach( 
+    //     (g_value, g_index, g_array)=>{
+            String( exam_text_0 ).split(/>/).slice(1).forEach( 
                 (a_value , a_index, a_array )=>{
         
                     var first_line = a_value.split('\n')[0].trim();
@@ -106,32 +106,41 @@ function test_2()
         
                     if( /\S+/.test( first_line ) )
                     {
-                        
         
                         console.log('>>>>' + answer_index );
-        
+                        
                         var answer = first_line.trim();
-        
-                        console.log( answer );
-        
-                        answer_index += ( a_value.match( selector_reg  ) || [] )
+                        
+                        if( /^_/.test( answer ) )
+                        {
+                            console.log(  answer );
+                        }
+
+                        answer_index += ( a_value.match( selector_reg ) || [] )
                             .length +  1;
+                        
+                        if( answer_index == 12 )
+                        {
+                            console.log( a_value.match( selector_reg ) );
+                            console.log( a_value );
+                        }
                         
                     }
             });
         
-            g_value.split('<').slice(1).forEach( 
+            String( exam_text_0 ).split('<').slice(1).forEach( 
                 (a_value , a_index, a_array )=>{
                     var answer = a_value.split('>')[0].trim();
                     
                     console.log('>>>>' + answer_index );
-                    console.log( answer );
+
+                    console.log(  answer );
+
                     answer_index++;
-                    
         
             });
-        }
-    )
+        // }
+    // )
 
 }
 
@@ -283,15 +292,22 @@ function test_2()
 function test_0()
 {
     var labels = document.querySelectorAll('label');
+    var answer_index = 0;
     labels.forEach( ( l_value, l_key, l_parent )=>{
         if( l_value.querySelector('input').checked )
         {
-            console.log(l_key );
+            console.log( answer_index );
         }
+
+        answer_index++;
+        
     } );
+
     var input_texts = document.querySelectorAll(`input[type='text'],textarea`);
     input_texts.forEach( (l_value, l_key, l_parent)=>{
+        console.log( answer_index );
         console.log( l_value.value );
+        answer_index++;
     } );
 }
 // get answers from origin
