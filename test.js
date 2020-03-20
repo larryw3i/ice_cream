@@ -90,11 +90,16 @@ hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha
  ah algha ga
 >`;
 
+function test_revise()
+{
+
+}
+
 // get answers from origin
 function test_2()
 {
     var answer_index = 0;
-    var selector_reg = /\n+[A-Z]\./g
+    var selector_reg = /\n+[A-E]\./g
     // String( exam_text_0 ).split(/\n+\d+\n+/).slice(1).forEach( 
     //     (g_value, g_index, g_array)=>{
             String( exam_text_0 ).split(/>/).slice(1).forEach( 
@@ -106,24 +111,23 @@ function test_2()
         
                     if( /\S+/.test( first_line ) )
                     {
-        
-                        console.log('>>>>' + answer_index );
-                        
                         var answer = first_line.trim();
+
+                        if( /[A-E]/.test( answer ) || /[T|t]/.test( answer ) )
+                        {
+                            console.log('>>>>' + answer_index );
+                        } 
                         
                         if( /^_/.test( answer ) )
                         {
+
+                            console.log('>>>>' + answer_index );
                             console.log(  answer );
                         }
 
                         answer_index += ( a_value.match( selector_reg ) || [] )
                             .length +  1;
                         
-                        if( answer_index == 12 )
-                        {
-                            console.log( a_value.match( selector_reg ) );
-                            console.log( a_value );
-                        }
                         
                     }
             });
@@ -154,7 +158,7 @@ function test_2()
     var exam_tip_reg = /^#\s+/;
     var exam_q_reg = /^##\s+/;
     var exam_q_a_reg = /^###\s+/
-    var exam_selector_reg = /^(>*[A-Z].\s+\w+)/
+    var exam_selector_reg = /^(>*[A-E].\s+\w+)/
     var exam_t_f_reg = />\s+[T|t|F|f]\s*/
 
 
@@ -313,11 +317,11 @@ function test_0()
 // get answers from origin
 function test_1()
 {
-    String(exam_text_0).split('>|(?:[A-Z].)').slice(1).forEach( 
+    String(exam_text_0).split('>|(?:[A-E].)').slice(1).forEach( 
         (a_value , a_index, a_array )=>{
             if( /\S+/.test( first_line ) )
                 var first_line = a_value.split('\n')[0];
-                first_line = /\s*[A-Z]./.test( first_line )? 
+                first_line = /\s*[A-E]./.test( first_line )? 
                     first_line.split('.')[0]: first_line;
                 var answer = first_line.trim();
                 
