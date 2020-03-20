@@ -1,0 +1,89 @@
+= xxxxx学校
+== 期末测试卷
+= 计算机
+
+# 判断题 
+5
+## xxxxxxxxx是对的
+> T
+
+## xxxxxxxaaaaaaxx是对的 
+> F
+
+## aasssssssxxxxxxxxx是对的 
+> T
+## xxxxxxx dd fdg dfslg fdgs dfkghsfhxx是对的 
+> F
+
+# 选择题
+5
+
+## 选( )还是AAAAAA
+>A. KKKKKKKKKKKKK
+B. LLLLLLLLLLLLLLL
+C. MMMMMMMMMMMMMMMM
+D. NNNNNNNNNNNNNNNNNNNNNN
+
+
+## 这一题不选A的话选什么( )
+#audio  './audio_0.mp3' '80%' 'audio_0'
+A. PPPPPPP
+>B. QQQQQQQQQQQQQQQQQQ
+C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+6
+## 这一题不选A的话选什么( )
+#audio  './audio_0.mp3' '80%' 'audio_0'
+A. PPPPPPP
+B. QQQQQQQQQQQQQQQQQQ
+C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+>D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+
+# 填空题
+8
+
+## UUUUUUUUUUUUUUUUUUU____UUUUUUUUUUUUUUUUUUUu___UUU 
+> _VBC _NBV
+
+## VVVVVVV____VVVVVVVVVVVVVVVVVV__VVVVVVVVVVV
+> _LLLNNN _MMMM
+
+## WWWWWWWWWWWWWWWWWWWWWW______WWWWWWWWWWWWWW
+> _LLSS
+
+# XXXXXXXXXXXXXXXXXXXXXXXX
+
+## YYYYYYYYYYYYYYYYYY     YYYYYYYYYYYYYYYYY
+#image              './image_0.png' '80%' 'image_0'
+
+
+### KLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKL ?
+?
+10
+< 
+HSDKJF HAFKh akf fha lfhadsfkj abva mnf lf alk
+a fhjaksfha skgg das
+as jakfsad gg asldfag sbaf fasd
+a fadhfa sgf adsjk asdkfk basjvba
+>
+
+### BVBVBBVBVBVBVBV    BBVBVBVBVBVBVBVBVBVBVBV ?
+?
+#video     './video_0.mp4' '80%' 'video_0'
+
+30
+< 
+dhg skdghs kghsdg hslgahga g
+ahag bxvbfhag 
+a jalhf ag
+>
+
+## ZZZZZZZZZZZZZZZZZZZZ    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ ?
+?
+< 
+hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha 
+ gahlghakghagbcx,vaa
+ ah algha ga
+>

@@ -37,6 +37,8 @@ function get_respondence_anwsers()
 function get_origin_anwsers( exam_text )
 {
     var answer_index = 0;
+    
+    // Don't rock the boat
     var selector_reg = /\n+[A-E]\./g;
     var answers = [];
 
@@ -44,7 +46,7 @@ function get_origin_anwsers( exam_text )
         (a_value , a_index, a_array )=>{
 
             var first_line = a_value.split('\n')[0].trim();
-            first_line = /^[A-Z]\./.test( first_line )? 
+            first_line = /^[A-E]\./.test( first_line )? 
                 first_line.split('.')[0]: first_line;
 
             if( /\S+/.test( first_line ) )
@@ -104,9 +106,11 @@ function preview( exam_text , preview_target )
 
         if(subheading_reg.test( value )){
             preview_html += 
-                `<div style='text-align:center'><h3>`+
-                value.split(subheading_reg)[1]+
-                '</h3></div>';
+                `<div style='text-align:center'>
+                    <h3>`+
+                        value.split(subheading_reg)[1]+
+                    `</h3>
+                </div>`;
         }
         else if(headline_reg.test( value ))
         {
@@ -146,7 +150,7 @@ function preview( exam_text , preview_target )
             `
             <label style='margin-left:20px'>
                 <input type='checkbox'/>
-                ${ /^>/.test( value ) ? String( value ).substring(1): value  }
+                ${ /^>/.test( value ) ? value.substring(1): value  }
             </label><br/>
             `;
         }
@@ -179,6 +183,7 @@ function preview( exam_text , preview_target )
         else if( /^#audio\s+/.test(value) )
         {
             var value_splits = value.split("'");
+
             preview_html+=
             `
             <div style='margin-left:20px; width:100%'>
@@ -192,6 +197,7 @@ function preview( exam_text , preview_target )
         else if( /^#video\s+/.test(value) )
         {
             var value_splits = value.split("'");
+
             preview_html+=
             `
             <div style='margin-left:20px; width:100%'>
@@ -205,6 +211,7 @@ function preview( exam_text , preview_target )
         else if( /^#image\s+/.test(value) )
         {
             var value_splits = value.split("'");
+
             preview_html+=
             `
             <div style='margin-left:20px; width:100%'>
