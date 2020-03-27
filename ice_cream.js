@@ -2,7 +2,7 @@
 /*!
   * ice_cream.js (https://github.com/larryw3i/ice_cream)
   * Copyright 2020 Larry Wei (https://github.com/larryw3i)
-  * Licensed under LGPL v3 \
+  * Licensed under LGPL v3.0 \
   * (https://github.com/larryw3i/ice_cream/blob/master/LICENSE)
   */
 
@@ -26,7 +26,7 @@ function get_respondence_anwsers()
     var input_texts = document.querySelectorAll(`input[type='text'],textarea`);
     input_texts.forEach( (l_value, l_key, l_parent)=>{
 
-        respondence_anwsers.push( `${answer_index} ${l_value.value}` );
+        respondence_anwsers.push( `_${answer_index} ${l_value.value}` );
 
         answer_index++;
     } );
@@ -73,7 +73,7 @@ function get_origin_anwsers( exam_text )
         (a_value , a_index, a_array )=>{
             var answer = a_value.split('>')[0].trim();
             
-            answers.push( `${answer_index} ${answer}` );
+            answers.push( `_${answer_index} ${answer}` );
 
             answer_index++;
 

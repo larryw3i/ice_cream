@@ -82,7 +82,7 @@ ahag bxvbfhag
 a jalhf ag
 >
 
-## ZZZZZZZZZZZZZZZZZZZZ    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ ?
+## ZZZZZZZZZZZZZZZZZZZZ    ZZZZZZZZZZZZZZZ. ZZZZZZ  . ZZZZZZZZ ?
 ?
 < 
 hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha 
@@ -105,7 +105,7 @@ function test_2()
         (a_value , a_index, a_array )=>{
 
             var first_line = a_value.split('\n')[0].trim();
-            first_line = /^[A-Z]\./.test( first_line )? 
+            first_line = /^[A-E]\./.test( first_line )? 
                 first_line.split('.')[0]: first_line;
 
             if( /\S+/.test( first_line ) )
