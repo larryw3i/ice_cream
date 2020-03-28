@@ -5,7 +5,7 @@
 = 计算机
 
 # 判断题 
-5
+
 ## xxxxxxxxx是对的
 > T
 
@@ -18,7 +18,7 @@
 > F
 
 # 选择题
-5
+
 
 ## 选( )还是AAAAAA
 >A. KKKKKKKKKKKKK
@@ -34,7 +34,7 @@ A. PPPPPPP
 C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 
-6
+
 ## 这一题不选A的话选什么( )
 #audio  './audio_0.mp3' '80%' 'audio_0'
 A. PPPPPPP
@@ -44,7 +44,7 @@ C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
 
 # 填空题
-8
+
 
 ## UUUUUUUUUUUUUUUUUUU____UUUUUUUUUUUUUUUUUUUu___UUU 
 > _VBC _NBV
@@ -60,10 +60,9 @@ C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 ## YYYYYYYYYYYYYYYYYY     YYYYYYYYYYYYYYYYY
 #image              './image_0.png' '80%' 'image_0'
 
-
 ### KLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKL ?
 ?
-10
+
 < 
 HSDKJF HAFKh akf fha lfhadsfkj abva mnf lf alk
 a fhjaksfha skgg das
@@ -75,7 +74,7 @@ a fadhfa sgf adsjk asdkfk basjvba
 ?
 #video     './video_0.mp4' '80%' 'video_0'
 
-30
+
 < 
 dhg skdghs kghsdg hslgahga g
 ahag bxvbfhag 
@@ -194,7 +193,7 @@ function test_2()
         else if( exam_q_reg.test(value) )
         {
             preview_html+= 
-                `<h5 style='margin-left:15px'>`+
+                `<h5 style='margin-left:15px' class='exam_q'>`+
                     exam_q_index+'. '+
                     value.split( exam_q_reg )[1]+
                 `</h5>` +
@@ -310,6 +309,7 @@ function test_0()
         answer_index++;
     } );
 }
+
 // get answers from origin
 function test_1()
 {
