@@ -1,89 +1,87 @@
-= xxxxx学校
-== 期末测试卷
-= 计算机
+=== xxxx中学
+== 物理
+=== 期中测试卷
 
-# 判断题 
-5
-## xxxxxxxxx是对的
-> T
+# 判断题
 
-## xxxxxxxaaaaaaxx是对的 
-> F
+// 1
+? 你觉得AAAA 
+TF
 
-## aasssssssxxxxxxxxx是对的 
-> T
-## xxxxxxx dd fdg dfslg fdgs dfkghsfhxx是对的 
-> F
+// 2
+? AAA 是 BBBBB
+TF
+
 
 # 选择题
-5
 
-## 选( )还是AAAAAA
->A. KKKKKKKKKKKKK
-B. LLLLLLLLLLLLLLL
-C. MMMMMMMMMMMMMMMM
-D. NNNNNNNNNNNNNNNNNNNNNN
-
-
-## 这一题不选A的话选什么( )
-#audio  './audio_0.mp3' '80%' 'audio_0'
-A. PPPPPPP
->B. QQQQQQQQQQQQQQQQQQ
-C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-
-6
-## 这一题不选A的话选什么( )
-#audio  './audio_0.mp3' '80%' 'audio_0'
-A. PPPPPPP
-B. QQQQQQQQQQQQQQQQQQ
-C. RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
->D. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-
-
-# 填空题
-8
-
-## UUUUUUUUUUUUUUUUUUU____UUUUUUUUUUUUUUUUUUUu___UUU 
-> _VBC _NBV
-
-## VVVVVVV____VVVVVVVVVVVVVVVVVV__VVVVVVVVVVV
-> _LLLNNN _MMMM
-
-## WWWWWWWWWWWWWWWWWWWWWW______WWWWWWWWWWWWWW
-> _LLSS
-
-# XXXXXXXXXXXXXXXXXXXXXXXX
-
-## YYYYYYYYYYYYYYYYYY     YYYYYYYYYYYYYYYYY
+// 3
+? 如果, 以下选择( )什么呢?
+A 选择什么呢? 想到答案了吗?
+B 选择A
+C 选择什么我不告诉你
+D 选择A
 #image              './image_0.png' '80%' 'image_0'
 
+// 4
+? 在A面有CCC, A经过HHH, 则
+A AAA, 啊啊啊啊
+B BBBB， bbbbb。
+C mmmmm，mmmmm
+D lll, mmm, sdfhkfas, yayayaya, 哈哈哈哈。>
 
-### KLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKLKL ?
-?
-10
-< 
-HSDKJF HAFKh akf fha lfhadsfkj abva mnf lf alk
-a fhjaksfha skgg das
-as jakfsad gg asldfag sbaf fasd
-a fadhfa sgf adsjk asdkfk basjvba
->
+# 填空题
 
-### BVBVBBVBVBVBVBV    BBVBVBVBVBVBVBVBVBVBVBV ?
-?
-#video     './video_0.mp4' '80%' 'video_0'
+// 5
+? AAAAA，BBBBB, CCCC, __, ___DDD，EEEE，FFF。
+_ _
 
-30
-< 
-dhg skdghs kghsdg hslgahga g
-ahag bxvbfhag 
-a jalhf ag
->
 
-## ZZZZZZZZZZZZZZZZZZZZ    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ ?
-?
-< 
-hdfkkgh sdgkl hsdffgklflsh fgf kghagn dvuwh erugbdv x v ,ah ,kah,d agha 
- gahlghakghagbcx,vaa
- ah algha ga
->
+// 6
+? SSSSDDD，DDDCCC，hhhh，__, __, ___, KKKKK， SSS。
+_ _ _
+
+# 简答题
+
+## 阿啊啊啊啊啊啊啊啊，的的点点滴滴的的的，的的点点滴滴的点点滴滴的。请求请求权请\
+求权请求权请求权全球，qqqqqqqq。
+// 7
+? sahfkasf，ddddddd，的的点点滴滴的的的
+#audio  './audio_0.mp3' '80%' 'audio_0'
+
+__
+## 阿啊啊啊啊啊啊啊啊，的的点点滴滴的的的，的的点点滴滴的点点滴滴的。请求请求权请\
+求权请求权请求权全球，qqqqqqqq。kkkkkkk， 口口口口口口口。
+
+// 8
+? sahfkasf，ddddddd，的的点点滴滴的的的，口口口口口可。
+__
+
+// 9
+? sahfkasf，ddddddd，的的点点滴滴的的的，口口口口口可。sdsdsdsdsdsdsd，岁的赛赛\
+道赛道赛道
+#video './video_0.mp4' '80%' 'video_0'
+__
+
+
+
+1 2 2
+3 4 5
+5 8 10
+9 20
+
+
+1T 2F \
+3A 4BC \
+
+5[AAA啊啊啊,jjjj] 6[AAAAA,的点点滴滴的,哦噢哦哦哦] \
+
+7[阿啊啊啊啊,\
+啊啊啊啊,啊啊啊啊，的饭店饭店饭店饭店饭店饭店副，的饭店饭店饭店饭店饭店副，\
+卡拉卡拉卡拉卡拉卡拉卡拉卡拉，哦皤皤皤皤皤皤。] \
+
+8[岁的赛道赛道赛道赛道赛道赛道，岁的赛道赛道赛道赛道赛道赛道，岁的赛道赛道赛道，\
+即可将客家客家客家客家可，广会馆会馆会馆会馆会馆会馆会馆会馆和。] \
+
+9[ksksks，ksksksksksk. ksksksksksksks库萨克萨克萨克萨克司。库萨克萨克萨克司，\
+啦啦啦啦啦啦。]

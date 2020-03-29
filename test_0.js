@@ -83,7 +83,7 @@ __
 1T 2F \
 3A 4BC \
 
-5[AAA啊啊啊,jjjj] 6[AAAAA,的点点滴滴的,哦噢哦哦哦] \
+5[AAA啊啊啊] [jjjj] 6[AAAAA] [的点点滴滴的] [哦噢哦哦哦] \
 
 7[阿啊啊啊啊,\
 啊啊啊啊,啊啊啊啊，的饭店饭店饭店饭店饭店饭店副，的饭店饭店饭店饭店饭店副，\
@@ -128,13 +128,14 @@ function preview( target )
     `;
 
     var input_template = ( question_num ) => `
-        <input data-question_num='${question_num}' />
+        <input type='text' data-question_num='${question_num}' />
     `;
 
     var option_template = (question_num, value)=> `
         <label>
             <input type="checkbox" name='option_${question_num}' 
-                data-question_num='${question_num}' value='${value}'/>${value}
+                data-question_num='${question_num}' 
+                value='${ value.split(/\s+/)[0] }'/>${value}
         </label>
         <br/>
     `;
@@ -207,7 +208,7 @@ function preview( target )
         {
             preview_html += option_template( 
                 question_num, 
-                value.split('\n')[0] )
+                value )
         }
         // keep textarea_rg front
         else if( textarea_rg.test( value ) )
@@ -228,13 +229,44 @@ function preview( target )
 
 function get_answers()
 {
+    var anwser = '';
+    var current_q_num = 0;
+    document.querySelectorAll(
+    '[type="checkbox"]:checked,[type="radio"]:checked')
+        .forEach( (value, key , parent)=>{
+            // new question
+            if( value.dataset.question_num != current_q_num )
+            {
+                current_q_num = value.dataset.question_num;
+                anwser +=`\n${current_q_num}${value.value}`
+            }
+            else
+            {
+                anwser += value.value;
+            }
+        }
+    )
+    
+
+    document.querySelectorAll(
+        '[type="text"],textarea').forEach(
+        (value, key , parent)=>{
+            // new question
+            if( value.dataset.question_num != current_q_num )
+            {
+                current_q_num = value.dataset.question_num;
+                anwser += `\n${current_q_num}[${value.value.trim()}]`
+            }
+            else
+            {
+                anwser += `[${value.value.trim()}]`;
+            }
+        }
+    )
+    return anwser;
 
 }
 
-function grade_anwser()
-{
-
-}
 
 (function(){
 
