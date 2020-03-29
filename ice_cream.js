@@ -119,9 +119,7 @@ function preview(exam_text, target) {
             }
         })
 
-    document.querySelector(target).insertAdjacentHTML(
-        'beforeend', preview_html
-    );
+    document.querySelector(target).innerHTML = preview_html;
 }
 
 function get_answers() {
