@@ -17,8 +17,9 @@
 git clone https://github.com/larryw3i/ice_cream.git
 cd ice_cream/test/
 firefox demo.html # 或者双击 demo.html 文件
-
 ```
+(或者你直接点击右上角的'Clone or download' 下载zip解压)  
+
 
 
 
