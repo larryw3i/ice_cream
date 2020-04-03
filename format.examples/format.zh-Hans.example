@@ -4,7 +4,7 @@
 
 # 判断题
 
-
+// //是注释
 // 1
 ? 你觉得AAAA 
 TF
@@ -22,6 +22,8 @@ A 选择什么呢? 想到答案了吗?
 B 选择A
 C 选择什么我不告诉你
 D 选择A
+
+//图片 参数为 URL 宽 alt
 #image              './image_0.png' '50%' 'image_0'
 
 // 4
@@ -35,6 +37,8 @@ D lll, mmm, sdfhkfas, yayayaya, 哈哈哈哈。>
 
 // 5
 ? AAAAA，BBBBB, CCCC, __, ___DDD，EEEE，FFF。
+
+// _ 是英文的_, 有多少个_就有多少和输入框 input[type='text']
 _ _
 
 
@@ -48,6 +52,8 @@ _ _ _
 求权请求权请求权全球，qqqqqqqq。
 // 7
 ? sahfkasf，ddddddd，的的点点滴滴的的的
+
+// 音频 参数同图片
 #audio  './audio_0.mp3' '50%' 'audio_0'
 
 __
@@ -56,22 +62,27 @@ __
 
 // 8
 ? sahfkasf，ddddddd，的的点点滴滴的的的，口口口口口可。
+
+// __ 是输入域 textarea
 __
 
 // 9
 ? sahfkasf，ddddddd，的的点点滴滴的的的，口口口口口可。sdsdsdsdsdsdsd，岁的赛赛\
 道赛道赛道
+
+// 视频 参数同图片
 #video './video_0.mp4' '50%' 'video_0'
 __
 
+// ---- 这里被分割, 你不应该把它返回到前段
 ----
-// the scale of marks
+// 评分标准
 1 2 2
 3 4 5
 5 8 10
 9 20
 
-// anwsers, which start with '~' is subjective item
+// 答案, ~为主观题, 计算机不应该去批阅
 1T 2F \
 3A 4BC \
 

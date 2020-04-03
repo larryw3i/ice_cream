@@ -1,8 +1,11 @@
+
+
 === xxxx中学
 == 物理
 === 期中测试卷
 
 # 判断题
+
 
 // 1
 ? 你觉得AAAA 
@@ -63,6 +66,7 @@ __
 #video './video_0.mp4' '50%' 'video_0'
 __
 
+// The cutting line, the following content shouldn't showed on front-end
 ----
 // the scale of marks
 1 2 2
@@ -70,7 +74,7 @@ __
 5 8 10
 9 20
 
-// anwsers
+// anwsers, which start with '~' is subjective item
 1T 2F \
 3A 4BC \
 

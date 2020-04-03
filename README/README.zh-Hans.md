@@ -4,7 +4,7 @@
 
 #### 项目
 
-> 去看 [ice_cream.js 格式](../format.example)  
+> 去看 [ice_cream.js 格式](../format.examples/format.zh-Hans.example)  
 
 > 去看 [ice_cream,js](../ice_cream.js)  
 
