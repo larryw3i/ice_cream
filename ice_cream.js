@@ -5,7 +5,14 @@
   * (https://github.com/larryw3i/ice_cream/blob/master/LICENSE)
   */
  
- function preview( target )
+
+  /** 
+   * Preview the examination.
+   * @param {String} exam_text  the examination text.
+   * @param {String} target the target element to show preview, it is the \
+   * selector string.
+   */
+ function preview( exam_text ,target )
  {
      var preview_html  =  '';
  
@@ -134,6 +141,11 @@
      document.querySelector( target ).innerHTML = preview_html;
  }
  
+ /**
+  * Get an array of anwsers from respondence, the array is like: \
+  * [{1:'T'},{2:'F'}]
+  * @returns { Array } 
+  */
  function get_answers()
  {
      var anwser = [];

@@ -1,0 +1,87 @@
+=== xxxx中学
+== 物理
+=== 期中测试卷
+
+# 判断题
+
+// 1
+? 你觉得AAAA 
+TF
+
+// 2
+? AAA 是 BBBBB
+TF
+
+
+# 选择题
+
+// 3
+? 如果, 以下选择( )什么呢?
+A 选择什么呢? 想到答案了吗?
+B 选择A
+C 选择什么我不告诉你
+D 选择A
+#image              './image_0.png' '50%' 'image_0'
+
+// 4
+? 在A面有CCC, A经过HHH, 则
+A AAA, 啊啊啊啊
+B BBBB， bbbbb。
+C mmmmm，mmmmm
+D lll, mmm, sdfhkfas, yayayaya, 哈哈哈哈。>
+
+# 填空题
+
+// 5
+? AAAAA，BBBBB, CCCC, __, ___DDD，EEEE，FFF。
+_ _
+
+
+// 6
+? SSSSDDD，DDDCCC，hhhh，__, __, ___, KKKKK， SSS。
+_ _ _
+
+# 简答题
+
+## 阿啊啊啊啊啊啊啊啊，的的点点滴滴的的的，的的点点滴滴的点点滴滴的。请求请求权请\
+求权请求权请求权全球，qqqqqqqq。
+// 7
+? sahfkasf，ddddddd，的的点点滴滴的的的
+#audio  './audio_0.mp3' '50%' 'audio_0'
+
+__
+## 阿啊啊啊啊啊啊啊啊，的的点点滴滴的的的，的的点点滴滴的点点滴滴的。请求请求权请\
+求权请求权请求权全球，qqqqqqqq。kkkkkkk， 口口口口口口口。
+
+// 8
+? sahfkasf，ddddddd，的的点点滴滴的的的，口口口口口可。
+__
+
+// 9
+? sahfkasf，ddddddd，的的点点滴滴的的的，口口口口口可。sdsdsdsdsdsdsd，岁的赛赛\
+道赛道赛道
+#video './video_0.mp4' '50%' 'video_0'
+__
+
+----
+// the scale of marks
+1 2 2
+3 4 5
+5 8 10
+9 20
+
+// anwsers
+1T 2F \
+3A 4BC \
+
+5[AAA啊啊啊] [jjjj] 6[AAAAA] [的点点滴滴的] [哦噢哦哦哦] \
+
+~7[阿啊啊啊啊,\
+啊啊啊啊,啊啊啊啊，的饭店饭店饭店饭店饭店饭店副，的饭店饭店饭店饭店饭店副，\
+卡拉卡拉卡拉卡拉卡拉卡拉卡拉，哦皤皤皤皤皤皤。] \
+
+~8[岁的赛道赛道赛道赛道赛道赛道，岁的赛道赛道赛道赛道赛道赛道，岁的赛道赛道赛道，\
+即可将客家客家客家客家可，广会馆会馆会馆会馆会馆会馆会馆会馆和。] \
+
+~9[ksksks，ksksksksksk. ksksksksksksks库萨克萨克萨克萨克司。库萨克萨克萨克司，\
+啦啦啦啦啦啦。]
