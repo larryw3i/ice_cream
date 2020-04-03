@@ -94,6 +94,7 @@ __
 
 9[ksksks，ksksksksksk. ksksksksksksks库萨克萨克萨克萨克司。库萨克萨克萨克司，\
 啦啦啦啦啦啦。]
+
 `;
 
 function preview( target )
@@ -227,8 +228,10 @@ function preview( target )
 
 function get_answers()
 {
-    var anwser = '';
+    var anwser = [];
     var current_q_num = 0;
+    var multi_anwser = '';
+
     document.querySelectorAll(
     '[type="checkbox"]:checked,[type="radio"]:checked')
         .forEach( (value, key , parent)=>{
@@ -236,11 +239,12 @@ function get_answers()
             if( value.dataset.question_num != current_q_num )
             {
                 current_q_num = value.dataset.question_num;
-                anwser +=`\n${current_q_num}${value.value}`
+                multi_anwser = value.value;
+                anwser.push( { [current_q_num]: multi_anwser } )
             }
             else
             {
-                anwser += value.value;
+                multi_anwser += value.value;
             }
         }
     )
@@ -249,15 +253,16 @@ function get_answers()
     document.querySelectorAll(
         '[type="text"],textarea').forEach(
         (value, key , parent)=>{
-            // new question
+            // new question            
             if( value.dataset.question_num != current_q_num )
             {
                 current_q_num = value.dataset.question_num;
-                anwser += `\n${current_q_num}[${value.value.trim()}]`
+                multi_anwser =  value.value.trim();
+                anwser.push( { [current_q_num]:  multi_anwser } )
             }
             else
             {
-                anwser += `[${value.value.trim()}]`;
+                multi_anwser += (','+value.value.trim() );
             }
         }
     )

@@ -89,7 +89,7 @@ function preview(exam_text, target) {
                  style='width:${ media_params[1].replace(/'|"/g, '')}' 
                  src='${ media_params[0].replace(/'|"/g, '')}' 
                  alt='${ media_params[2].replace(/'|"/g, '')}'
-             `
+                `;
 
                 if (value.startsWith('#i')) {
                     preview_html += `<img ${properties} />`;
