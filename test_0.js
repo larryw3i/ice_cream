@@ -229,7 +229,7 @@ function preview( target )
 function get_answers()
 {
     var anwser = [];
-    var current_q_num = 0;
+    var current_q_num = 1;
     var multi_anwser = '';
 
     document.querySelectorAll(
@@ -238,9 +238,9 @@ function get_answers()
             // new question
             if( value.dataset.question_num != current_q_num )
             {
+                anwser.push( { [current_q_num]: multi_anwser } )
                 current_q_num = value.dataset.question_num;
                 multi_anwser = value.value;
-                anwser.push( { [current_q_num]: multi_anwser } )
             }
             else
             {
@@ -257,12 +257,17 @@ function get_answers()
             if( value.dataset.question_num != current_q_num )
             {
                 current_q_num = value.dataset.question_num;
+                anwser.push( { [current_q_num]:  multi_anwser } );
                 multi_anwser =  value.value.trim();
-                anwser.push( { [current_q_num]:  multi_anwser } )
             }
             else
             {
                 multi_anwser += (','+value.value.trim() );
+            }
+            
+            if( key == parent.length-1 )
+            {
+                anwser.push( { [current_q_num]:  multi_anwser } );
             }
         }
     )
