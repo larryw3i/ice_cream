@@ -2,6 +2,8 @@
 ## a native js for generating examination question easily!
 
 
+<img src='./test/demo.webp' style='width:90%' />
+
 #### English | [简体中文](./README/README.zh-Hans.md)
 
 

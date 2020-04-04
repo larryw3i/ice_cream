@@ -1,6 +1,10 @@
 # ice_cream.js
-## 使用 ice_cream.js 去生成测试题目 !
-#### [English](../README.md) | 简体中文
+## 使用 ice_cream.js 去生成测试题目 !  
+
+<img src='../test/demo.webp' style='width:90%' />
+
+#### [English](../README.md) | 简体中文  
+
 
 #### 项目
 
