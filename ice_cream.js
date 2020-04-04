@@ -74,7 +74,9 @@
              var heading_size = 7 - ( value.match(/=/g) ).length;
              var heading = value.split(/\s+/g)[1];
              preview_html += `
-                 <h${ heading_size }>${ heading }</h${ heading_size }>
+                <div style='width:100%;text-align:center'>
+                    <h${ heading_size }>${ heading }</h${ heading_size }>
+                </div>
              `;
  
          }
@@ -83,7 +85,7 @@
              var heading_size =  ( value.match(/#/g) ).length;
              var heading = value.split(/\s+/g)[1];
              preview_html += `
-                 <h${ heading_size }>${ heading }</h${ heading_size }>
+                <h${ heading_size }>${ heading }</h${ heading_size }>
              `;
          }
          else if( question_reg.test( value ) )
